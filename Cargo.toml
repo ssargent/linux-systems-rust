@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/syslib",
+  "crates/syslab",
+  "crates/chapter01-file-io",
+  "crates/chapter02-processes",
+  "crates/chapter03-signals",
+  "crates/chapter04-ipc",
+  "crates/chapter05-threads",
+  "crates/chapter06-filesystems",
+  "crates/chapter07-networking",
+  "crates/capstone",
+  "xtask",
+]
+
+[workspace.dependencies]
+anyhow = "1"
+thiserror = "1"
+clap = { version = "4", features = ["derive"] }
+libc = "0.2"
+nix = { version = "0.29", features = ["fs", "process", "signal", "socket", "poll", "user"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+tempfile = "3"
