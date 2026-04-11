@@ -1,6 +1,6 @@
 use std::net::SocketAddr;
 
-pub fn parse_addr(input: &str) -> std::net::Result<SocketAddr> {
+pub fn parse_addr(input: &str) -> std::io::Result<SocketAddr> {
     input.parse().map_err(|_| {
         std::io::Error::new(std::io::ErrorKind::InvalidInput, "invalid socket address")
     })
