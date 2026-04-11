@@ -10,6 +10,7 @@ This repository is a Rust workspace for a Linux systems programming course.
 - `crates/capstone`: capstone project crate.
 - `xtask`: project task runner for CI and environment checks.
 - `docs/`: course plans, platform notes, and syscall study notes.
+  See [docs/devcontainer-guide.md](/Users/scott/source/github/ssargent/linux-systems-rust/docs/devcontainer-guide.md) for the Linux container workflow.
 - `examples/`: focused runnable examples for common systems patterns.
 - `testdata/`: fixtures for file trees and portability notes.
 - `.devcontainer/`: Linux development container configuration.
@@ -18,6 +19,9 @@ This repository is a Rust workspace for a Linux systems programming course.
 ## Quick Start
 
 ```bash
+just
+just check
+just syslab --help
 cargo check
 cargo run -p syslab -- --help
 cargo run -p xtask -- --help

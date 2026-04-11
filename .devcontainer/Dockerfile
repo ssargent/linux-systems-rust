@@ -10,5 +10,10 @@ ENV RUSTUP_HOME=/usr/local/rustup \
     CARGO_HOME=/usr/local/cargo \
     PATH=/usr/local/cargo/bin:${PATH}
 
+RUN mkdir -p ${RUSTUP_HOME} ${CARGO_HOME} && \
+    chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
+
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y --profile minimal --default-toolchain stable && \
-    rustup component add rustfmt clippy
+    rustup component add rustfmt clippy && \
+    cargo install just --locked && \
+    chown -R vscode:vscode ${RUSTUP_HOME} ${CARGO_HOME}
